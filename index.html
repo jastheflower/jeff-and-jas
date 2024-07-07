@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surprise Messages and Pictures</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    .content {
+      text-align: center;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <img id="randomImage" src="" alt="Random Image" style="display:none;">
+    <p id="randomMessage" style="display:none;"></p>
+  </div>
+
+  <script>
+    const images = [
+      "image1.jpg", "image2.jpg" // Add paths to your 100 images
+    ];
+
+    const messages = [
+      "Message 1", "Message 2" // Add your 100 messages
+    ];
+
+    function getRandomItem(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    window.onload = function() {
+      const randomImage = getRandomItem(images);
+      const randomMessage = getRandomItem(messages);
+
+      document.getElementById('randomImage').src = randomImage;
+      document.getElementById('randomImage').style.display = 'block';
+
+      document.getElementById('randomMessage').innerText = randomMessage;
+      document.getElementById('randomMessage').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
