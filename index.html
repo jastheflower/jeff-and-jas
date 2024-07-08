@@ -30,11 +30,11 @@
 
   <script>
     const images = [
-      "image1.jpg", "image2.jpg" // Add paths to your 100 images
+      "image1.jpg", "image2.jpg", // Add paths to your 100 images
     ];
 
     const messages = [
-      "Message 1", "Message 2" // Add your 100 messages
+      "Message 1", "Message 2", // Add your 100 messages
     ];
 
     function getRandomItem(arr) {
@@ -45,11 +45,15 @@
       const randomImage = getRandomItem(images);
       const randomMessage = getRandomItem(messages);
 
-      document.getElementById('randomImage').src = randomImage;
-      document.getElementById('randomImage').style.display = 'block';
+      if (randomImage) {
+        document.getElementById('randomImage').src = randomImage;
+        document.getElementById('randomImage').style.display = 'block';
+      }
 
-      document.getElementById('randomMessage').innerText = randomMessage;
-      document.getElementById('randomMessage').style.display = 'block';
+      if (randomMessage) {
+        document.getElementById('randomMessage').innerText = randomMessage;
+        document.getElementById('randomMessage').style.display = 'block';
+      }
     }
   </script>
 </body>
